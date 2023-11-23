@@ -1,11 +1,17 @@
 #Terraform Block
 
-terraform{
+terraform {
   required_version = "~> 1.6"
   required_providers {
     aws = {
-      source = ""
-      version = "value"
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
     }
   }
+}
+
+#Provider Block
+provider "aws" {
+  profile = "default"
+  region  = "us-east-1"
 }
