@@ -23,7 +23,7 @@ variable "instance_keypair" {
 variable "instance_type_list" {
   description = "EC2 Instnace Type"
   type        = list(string)
-  default     = ["t2.micro", "t3.micro"]
+  default     = ["t3.micro", "t2.micro"]
 }
 
 
@@ -32,8 +32,8 @@ variable "instance_type_map" {
   description = "EC2 Instnace Type"
   type        = map(string)
   default = {
-    "dev"  = "t2.micro"
-    "qa"   = "t3.micro"
+    "dev"  = "t3.micro"
+    "qa"   = "t2.micro"
     "prod" = "t2.small"
   }
 }
