@@ -4,4 +4,3 @@ VPC created on $(date) and VPC ID: vpc-06a506ea3fc77cbbf
 VPC created on $(date) and VPC ID: vpc-0b278c557d5acfd2c 
 VPC created on $(date) and VPC ID: vpc-0e50863cf072ee04b 
 VPC created on $(date) and VPC ID: vpc-039d8aeabb314212c 
-VPC created on $(date) and VPC ID: vpc-073840560ccb94379 
