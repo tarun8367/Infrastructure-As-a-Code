@@ -113,7 +113,7 @@ module "alb" {
 
   # HTTPS Listener Rules
   https_listener_rules = [
-     # Rule-1: custom-header=my-app-1 should go to App1 EC2 Instances
+    # Rule-1: custom-header=my-app-1 should go to App1 EC2 Instances
     {
       https_listener_index = 0
       actions = [
@@ -142,19 +142,19 @@ module "alb" {
       ]
       conditions = [{
         http_headers = [{
-          http_header_name = "custom-header"
+          http_header_name = "custom2-header"
           values           = ["app-2", "app2", "my-app-2"]
         }]
       }]
     },
-      # Rule-3: When Query-String, website=aws-eks redirect to https://stacksimplify.com/aws-eks/
-    { 
+    # Rule-3: When Query-String, website=aws-eks redirect to https://stacksimplify.com/aws-eks/
+    {
       https_listener_index = 0
-      priority = 3
+      priority             = 3
       actions = [{
         type        = "redirect"
         status_code = "HTTP_302"
-        host        = "thetkc.shop"
+        host        = "stacksimplify.com"
         path        = "/aws-eks/"
         query       = ""
         protocol    = "HTTPS"
@@ -163,25 +163,25 @@ module "alb" {
         query_strings = [{
           key   = "website"
           value = "aws-eks"
-          }]
+        }]
       }]
     },
-      # Rule-4: When Host Header = azure-aks.devopsincloud.com, redirect to https://stacksimplify.com/azure-aks/azure-kubernetes-service-introduction/
-    { 
+    # Rule-4: When Host Header = azure-aks.devopsincloud.com, redirect to https://stacksimplify.com/azure-aks/azure-kubernetes-service-introduction/
+    {
       https_listener_index = 0
-      priority = 4
+      priority             = 4
       actions = [{
         type        = "redirect"
         status_code = "HTTP_302"
-        host        = "thetkc.shop"
+        host        = "stacksimplify.com"
         path        = "/azure-aks/azure-kubernetes-service-introduction/"
         query       = ""
         protocol    = "HTTPS"
       }]
       conditions = [{
-        host_headers = ["azure-aks11.thetkc.shop"]
+        host_headers = ["azure-aks101.thetkc.shop"]
       }]
-    },   
+    },
   ]
 
 
